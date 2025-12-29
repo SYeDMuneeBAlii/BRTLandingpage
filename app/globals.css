@@ -1,26 +1,292 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #000000;
+  --foreground: #ffffff;
+  --muted: #888888;
+  --card: #0a0a0a;
+  --card-foreground: #ffffff;
+  --border: #1a1a1a;
+  
+  /* Synced High-End Palette: Electric Cyan & Deep Zinc */
+  --primary: #00f2ff; 
+  --primary-dark: #0088ff;
+  --primary-light: #70faff;
+  --primary-darker: #001122;
+  
+  --secondary: #0088ff; 
+  --secondary-dark: #0044ff;
+  --secondary-light: #88ccff;
+  
+  --accent: #00f2ff;
+  
+  color-scheme: dark;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-primary-light: var(--primary-light);
+  --color-primary-darker: var(--primary-darker);
+  --color-secondary: var(--secondary);
+  --color-secondary-dark: var(--secondary-dark);
+  --color-secondary-light: var(--secondary-light);
+  --color-accent: var(--accent);
+  --color-accent-dark: var(--accent-dark);
+  --color-accent-light: var(--accent-light);
+  
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  cursor: none !important; /* Hide default system cursor */
+}
+
+/* Ensure interactive elements still hide the system pointer */
+a, button, [role="button"], input, textarea, select {
+  cursor: none !important;
+}
+
+/* Brilliant Work Inspired Chapter Pills */
+.glass-pill {
+  @apply px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl text-[10px] font-black tracking-[0.2em] uppercase text-white/80 shadow-none transition-all duration-300;
+}
+
+.glass-pill:hover {
+  @apply border-white/20 text-white;
+}
+
+/* Minimalist Modern Card */
+.card-modern {
+  @apply relative overflow-hidden rounded-3xl border border-white/5 bg-white/[0.02] backdrop-blur-sm transition-all duration-700 shadow-none;
+}
+
+.card-modern:hover {
+  @apply border-white/10 bg-white/[0.04];
+}
+
+.text-gradient {
+  @apply bg-linear-to-b from-white via-white to-white/40 bg-clip-text text-transparent;
+}
+
+/* Narrative Sections */
+.narrative-title {
+  @apply text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tight leading-[0.9] uppercase;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: var(--primary-dark);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Selection color */
+::selection {
+  background: var(--primary-light);
+  color: var(--primary-darker);
+}
+
+.dark ::selection {
+  background: var(--primary-dark);
+  color: var(--primary-light);
+}
+
+/* Custom color utilities */
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.bg-primary-dark {
+  background-color: var(--primary-dark);
+}
+
+.bg-primary-light {
+  background-color: var(--primary-light);
+}
+
+.text-primary {
+  color: var(--primary-darker);
+}
+
+.text-primary-dark {
+  color: var(--primary-darker);
+}
+
+.bg-secondary {
+  background-color: var(--secondary);
+}
+
+.text-secondary {
+  color: var(--secondary-dark);
+}
+
+.bg-accent {
+  background-color: var(--accent);
+}
+
+.text-accent {
+  color: var(--accent-dark);
+}
+
+.gradient-primary {
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+}
+
+.gradient-primary-vertical {
+  background: linear-gradient(to bottom, var(--primary), var(--secondary));
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Glassmorphism utility classes */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+}
+
+.glass-dark {
+  background: rgba(17, 24, 39, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+}
+
+.dark .glass-card {
+  background: rgba(17, 24, 39, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+}
+
+.glass-card-gold {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 134, 179, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(0, 134, 179, 0.2);
+}
+
+.dark .glass-card-gold {
+  background: linear-gradient(135deg, rgba(38, 38, 38, 0.6), rgba(38, 38, 38, 0.4));
+  border: 1px solid rgba(51, 163, 196, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(51, 163, 196, 0.2);
+}
+
+/* Shimmer animation for gradient text */
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 3s ease-in-out infinite;
+  background-size: 200% auto;
+}
+
+/* Modern Premium Card System */
+.card-modern {
+  @apply relative overflow-hidden rounded-[40px] border border-white/5 bg-white/[0.02] backdrop-blur-sm transition-all duration-700 shadow-none;
+}
+
+.card-modern:hover {
+  @apply border-white/10 bg-white/[0.04];
+}
+
+.icon-box {
+  @apply w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-500 relative overflow-hidden;
+  background: var(--border);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.icon-box:hover {
+  @apply border-white/20;
 }
