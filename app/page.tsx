@@ -1,19 +1,18 @@
 'use client';
 
 import { useState } from 'react';
-import Navbar from '@/components/Navbar';
-import StoryOpening from '@/components/StoryOpening';
-import StoryChallenge from '@/components/StoryChallenge';
-import StoryJourney from '@/components/StoryJourney';
-import HorizontalGallery from '@/components/HorizontalGallery';
-import ModulesShowcase from '@/components/ModulesShowcase';
-import StorySolution from '@/components/StorySolution';
-import StoryImpact from '@/components/StoryImpact';
-import StoryFuture from '@/components/StoryFuture';
-import Footer from '@/components/Footer';
-import BackToTop from '@/components/BackToTop';
-import CursorFollower from '@/components/CursorFollower';
-import ContactModal from '@/components/ContactModal';
+import Navbar from '@/components/layout/Navbar';
+import StoryOpening from '@/components/story/StoryOpening';
+import StoryChallenge from '@/components/story/StoryChallenge';
+import StoryJourney from '@/components/story/StoryJourney';
+import HorizontalGallery from '@/components/gallery/HorizontalGallery';
+import ModulesShowcase from '@/components/modules/ModulesShowcase';
+import StorySolution from '@/components/story/StorySolution';
+import StoryImpact from '@/components/story/StoryImpact';
+import StoryFuture from '@/components/story/StoryFuture';
+import Footer from '@/components/layout/Footer';
+import BackToTop from '@/components/layout/BackToTop';
+import ContactModal from '@/components/contact/ContactModal';
 
 export default function Home() {
   const [contactModalOpen, setContactModalOpen] = useState(false);
@@ -37,7 +36,6 @@ export default function Home() {
       <StoryFuture />
       <Footer />
       <BackToTop />
-      <CursorFollower />
     </main>
   );
 }

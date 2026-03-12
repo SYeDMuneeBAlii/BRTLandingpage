@@ -10,6 +10,7 @@
   
   /* Synced High-End Palette: Electric Cyan & Deep Zinc */
   --primary: #00f2ff; 
+  --primary-muted: #38bdf8; /* Softer for text on dark – visible, not piercing */
   --primary-dark: #0088ff;
   --primary-light: #70faff;
   --primary-darker: #001122;
@@ -139,7 +140,7 @@ a, button, [role="button"], input, textarea, select {
 }
 
 .text-primary {
-  color: var(--primary-darker);
+  color: var(--primary-muted);
 }
 
 .text-primary-dark {

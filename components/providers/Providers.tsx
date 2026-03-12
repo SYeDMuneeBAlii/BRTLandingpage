@@ -2,8 +2,9 @@
 
 import { useEffect } from 'react';
 import Lenis from 'lenis';
-import { ThemeProvider } from "./ThemeProvider";
-import ScrollProgress from "./ScrollProgress";
+import { ThemeProvider } from './ThemeProvider';
+import ScrollProgress from '@/components/layout/ScrollProgress';
+import CursorFollower from '@/components/cursor/CursorFollower';
 
 export default function Providers({ children }: { children: React.ReactNode }) {
   useEffect(() => {
@@ -28,6 +29,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider>
       <ScrollProgress />
+      <CursorFollower />
       {children}
     </ThemeProvider>
   );

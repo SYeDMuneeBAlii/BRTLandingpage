@@ -48,15 +48,6 @@ export default function StoryOpening() {
             style={{ opacity, scale, y }}
             className="text-center lg:text-left max-w-lg order-2 lg:order-1"
           >
-            <motion.div
-              className="glass-pill mb-10 inline-flex items-center gap-2"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 0.5 }}
-            >
-              <span className="text-white font-black text-[9px]">01 // THE THESIS</span>
-            </motion.div>
-
             <motion.h1 
               style={{ y: textY }}
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[0.95] uppercase text-white mb-10"
@@ -65,7 +56,7 @@ export default function StoryOpening() {
               transition={{ duration: 1, delay: 0.8 }}
             >
               Every Great Story <br />
-              <span className="text-white/30 italic font-serif lowercase tracking-normal text-3xl sm:text-4xl md:text-5xl">starts with</span> <br />
+              <span className="text-slate-400 italic font-serif lowercase tracking-normal text-3xl sm:text-4xl md:text-5xl">starts with</span> <br />
               <span className="text-primary">Decision</span>
             </motion.h1>
 

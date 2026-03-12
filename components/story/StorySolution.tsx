@@ -48,15 +48,6 @@ export default function StorySolution() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <motion.div
-            className="glass-pill mb-12"
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <span className="text-white font-black">05 // THE INTELLIGENCE</span>
-          </motion.div>
-
           <motion.h2
             className="narrative-title text-white mb-12"
           >
