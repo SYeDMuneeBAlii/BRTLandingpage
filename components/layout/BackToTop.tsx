@@ -8,26 +8,17 @@ export default function BackToTop() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const toggleVisible = () => {
-      setVisible(window.scrollY > 300);
-    };
-
+    const toggleVisible = () => setVisible(window.scrollY > 300);
     window.addEventListener('scroll', toggleVisible, { passive: true });
     return () => window.removeEventListener('scroll', toggleVisible);
   }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-    });
-  };
 
   return (
     <AnimatePresence>
       {visible && (
         <motion.button
           key="back-to-top"
-          onClick={scrollToTop}
+          onClick={() => window.scrollTo({ top: 0 })}
           className="fixed bottom-8 right-8 z-50 p-4 rounded-full text-black bg-white hover:bg-primary transition-colors duration-300"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}

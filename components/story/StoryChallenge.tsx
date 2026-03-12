@@ -65,15 +65,6 @@ export default function StoryChallenge() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <motion.div
-            className="glass-pill mb-12"
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.5 }}
-          >
-            <span className="text-white font-black">02 // THE FRICTION</span>
-          </motion.div>
-
           <motion.h2
             className="narrative-title text-white mb-12"
             initial={{ opacity: 0, x: -50 }}

@@ -52,7 +52,7 @@ export default function CursorFollower() {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 w-6 h-6 rounded-full pointer-events-none z-[9999] mix-blend-difference"
+      className="fixed top-0 left-0 w-6 h-6 rounded-full pointer-events-none z-[9999]"
       style={{
         x: cursorXSpring,
         y: cursorYSpring,
@@ -61,7 +61,7 @@ export default function CursorFollower() {
       }}
     >
       <motion.div
-        className="w-full h-full rounded-full bg-primary/20 border border-primary/30 backdrop-blur-sm"
+        className="w-full h-full rounded-full border-2 border-primary bg-white/10 shadow-[0_0_12px_rgba(0,242,255,0.4)]"
         animate={{
           scale: isHovering ? 1.5 : 1,
         }}

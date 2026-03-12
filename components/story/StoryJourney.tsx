@@ -69,15 +69,6 @@ export default function StoryJourney() {
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <motion.div
-            className="glass-pill mb-12"
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.5 }}
-          >
-            <span className="text-white font-black">03 // THE GENESIS</span>
-          </motion.div>
-
           <motion.h2
             className="narrative-title text-white mb-12"
           >

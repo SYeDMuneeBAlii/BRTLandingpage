@@ -8,13 +8,7 @@ function ScrollProgress() {
   const opacity = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0, 1, 1, 0]);
 
   return (
-    <motion.div
-      className="fixed top-0 left-0 right-0 h-1 z-[100] origin-left"
-      style={{
-        scaleX,
-        opacity,
-      }}
-    >
+    <motion.div className="fixed top-0 left-0 right-0 h-1 z-[100] origin-left" style={{ scaleX, opacity }}>
       <motion.div
         className="h-full w-full"
         style={{
