@@ -1,41 +1,48 @@
-'use client';
+import HomePageClient from '@/components/HomePageClient';
 
-import { useState } from 'react';
-import Navbar from '@/components/layout/Navbar';
-import StoryOpening from '@/components/story/StoryOpening';
-import StoryChallenge from '@/components/story/StoryChallenge';
-import StoryJourney from '@/components/story/StoryJourney';
-import HorizontalGallery from '@/components/gallery/HorizontalGallery';
-import ModulesShowcase from '@/components/modules/ModulesShowcase';
-import StorySolution from '@/components/story/StorySolution';
-import StoryImpact from '@/components/story/StoryImpact';
-import StoryFuture from '@/components/story/StoryFuture';
-import Footer from '@/components/layout/Footer';
-import BackToTop from '@/components/layout/BackToTop';
-import ContactModal from '@/components/contact/ContactModal';
+// JSON-LD for the homepage — SoftwareApplication schema
+const softwareJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Business Architect Technologies Platform',
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Web',
+  description:
+    'A unified, modular business platform with 25+ integrated modules — CRM, Logistics, Finance, LMS, HRM, and more. Built for scale and intelligence.',
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'USD',
+    name: 'Contact for pricing',
+  },
+  featureList: [
+    'CRM & Customer Management',
+    'Logistics & Shipment Tracking',
+    'Financial Management & Invoicing',
+    'Learning Management System (LMS)',
+    'Human Resource Management (HRM)',
+    'Real Estate Management',
+    'Hospital Management System',
+    'NFT Marketplace',
+    'Bidding & Auction Platform',
+    'Affiliate Management',
+    'Executive Dashboard',
+    'Social Media Management',
+  ],
+  author: {
+    '@type': 'Organization',
+    name: 'Business Architect Technologies',
+  },
+};
 
 export default function Home() {
-  const [contactModalOpen, setContactModalOpen] = useState(false);
-
   return (
-    <main className="relative min-h-screen bg-black text-white">
-      <Navbar onContactClick={() => setContactModalOpen(true)} />
-      
-      <ContactModal 
-        isOpen={contactModalOpen} 
-        onClose={() => setContactModalOpen(false)} 
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareJsonLd) }}
       />
-
-      <StoryOpening />
-      <StoryChallenge />
-      <StoryJourney />
-      <HorizontalGallery />
-      <ModulesShowcase />
-      <StorySolution />
-      <StoryImpact />
-      <StoryFuture />
-      <Footer />
-      <BackToTop />
-    </main>
+      <HomePageClient />
+    </>
   );
 }
