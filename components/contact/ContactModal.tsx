@@ -196,9 +196,9 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                     ) : (
                       <div className="flex-1 flex flex-col items-center justify-center p-8 text-center bg-zinc-900 border border-white/10 rounded-2xl">
                         <Calendar size={48} className="text-primary mb-6" />
-                        <h4 className="text-2xl font-black text-white uppercase tracking-tight mb-4">Scheduling Not Configured</h4>
+                        <h4 className="text-2xl font-black text-white uppercase tracking-tight mb-4">Scheduling Coming Soon</h4>
                         <p className="text-white/60 mb-8 max-w-md mx-auto">
-                          Please set the <code className="bg-black px-2 py-1 rounded text-primary">NEXT_PUBLIC_GOOGLE_SCHEDULING_URL</code> environment variable to your Google Appointment Scheduling link.
+                          Online scheduling is not available yet. Please use one of the other contact methods below.
                         </p>
                         <button 
                           onClick={() => setView('options')}
